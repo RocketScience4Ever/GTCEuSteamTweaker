@@ -208,6 +208,7 @@ processResources {
 jar {
     manifest {
         def attribute_map = [:]
+        attribute_map['MixinConfigs'] = 'mixins.gtceusteamtweaker.json'
         if (propertyBool('is_coremod')) {
             attribute_map['FMLCorePlugin'] = propertyString('coremod_plugin_class_name')
             if (propertyBool('coremod_includes_mod')) {

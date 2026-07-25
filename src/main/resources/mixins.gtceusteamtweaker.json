@@ -1,0 +1,16 @@
+{
+	"package": "com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaks.mixins",
+	"required": true,
+	"refmap": "mixins.gtceusteamtweaker.refmap.json",
+	"target": "@env(DEFAULT)",
+	"minVersion": "0.8.5",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+		"MixinBoilerType",
+		"MixinSteamCoalBoiler",
+		"MixinSteamLavaBoiler",
+		"MixinSteamSolarBoiler"
+	],
+	"server": [],
+	"client": []
+}
