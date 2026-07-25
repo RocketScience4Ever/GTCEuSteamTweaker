@@ -1,5 +1,5 @@
 {
-	"package": "com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaks.mixins",
+	"package": "com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixins",
 	"required": true,
 	"refmap": "mixins.gtceusteamtweaker.refmap.json",
 	"target": "@env(DEFAULT)",

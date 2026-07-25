@@ -1,4 +1,4 @@
-package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaks.main;
+package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.main;
 
 import net.minecraftforge.fml.common.Mod;
 

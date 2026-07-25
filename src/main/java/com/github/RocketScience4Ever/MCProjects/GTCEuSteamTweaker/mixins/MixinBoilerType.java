@@ -1,4 +1,4 @@
-package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaks.mixins;
+package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixins;
 
 import gregtech.common.metatileentities.multi.BoilerType;
 
@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaks.config.GTCEuSteamTweakerConfig;
+import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.config.GTCEuSteamTweakerConfig;
 
 @Mixin(BoilerType.class)
 public abstract class MixinBoilerType {

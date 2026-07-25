@@ -1,6 +1,6 @@
-package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaks.mixins;
+package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixins;
 
-import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaks.config.GTCEuSteamTweakerConfig;
+import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.config.GTCEuSteamTweakerConfig;
 import gregtech.common.metatileentities.steam.boiler.SteamBoiler;
 import gregtech.common.metatileentities.steam.boiler.SteamCoalBoiler;
 

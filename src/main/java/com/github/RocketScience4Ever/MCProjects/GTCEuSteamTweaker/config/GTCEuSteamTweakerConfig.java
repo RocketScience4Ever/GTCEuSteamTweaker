@@ -1,4 +1,4 @@
-package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaks.config;
+package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.config;
 
 import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.gtceusteamtweaker.Tags;
 import net.minecraftforge.common.config.Config;
