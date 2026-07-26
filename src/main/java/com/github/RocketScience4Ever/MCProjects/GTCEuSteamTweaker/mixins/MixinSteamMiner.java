@@ -1,35 +1,22 @@
 package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixins;
 
 import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.config.GTCEuSteamTweakerConfig;
-import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.gtceusteamtweaker.Tags;
 import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixin_interfaces.ITweakeableSteamEfficiency;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.common.metatileentities.steam.SteamMiner;
 
 import net.minecraft.util.ResourceLocation;
 
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Mutable;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**Mixin to {@link SteamMiner} to apply the {@link ITweakeableSteamEfficiency} interface.
  */
 @Mixin(SteamMiner.class)
 public abstract class MixinSteamMiner extends MetaTileEntity {
-    @Mutable
-    @Final
-    @Shadow
-    private int energyPerTick;
-
     /**Do not call this; it only exists to make the compiler happy.
      */
     private MixinSteamMiner(ResourceLocation metaTileEntityId) {
@@ -39,19 +26,15 @@ public abstract class MixinSteamMiner extends MetaTileEntity {
     /**Tweaks the mB/t of GTCEu steam consumed by this {@link SteamMiner} using the value specified by the GTCEu Steam Tweaker Config.
      * This method exists to reflect the state of the {@code minermBPt} option when a new {@code SteamMiner} is initialized.
      */
-    @Inject(method = "<init>", at = @At("RETURN"))
-    private void onInit(CallbackInfo ci) {
-        this.energyPerTick = GTCEuSteamTweakerConfig.singleblockMachineEfficiency.minermBPt;
+    @WrapOperation(method = "drainEnergy", at = @At(value = "FIELD", target = "Lgregtech/common/metatileentities/steam/SteamMiner;energyPerTick:I"))
+    private int onDrainEnergyGetEnergyPerTick(SteamMiner miner, Operation<Integer> original) {
+        return GTCEuSteamTweakerConfig.singleblockMachineEfficiency.minermBPt;
     }
 
-    /**Updates the mB/t of GTCEu steam consumed by this {@link SteamMiner} using the value specified by the GTCEu Steam Tweaker Config.
-     * This method exists to reflect changes the {@code minermBPt} option using the in-game mod config menu.
+    /**Updates the tooltip for the {@link SteamMiner} to reflect changes made by {@link MixinSteamMiner#onDrainEnergyGetEnergyPerTick(SteamMiner, Operation)}.
      */
-    @Unique
-    @SubscribeEvent
-    private void gTCEuSteamTweaker$onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-        if (event.getModID().equals(Tags.MOD_ID)) {
-            this.energyPerTick = GTCEuSteamTweakerConfig.singleblockMachineEfficiency.minermBPt;
-        }
+    @WrapOperation(method = "addInformation", at = @At(value = "FIELD", target = "Lgregtech/common/metatileentities/steam/SteamMiner;energyPerTick:I"))
+    private int onAddInformationGetEnergyPerTick(SteamMiner miner, Operation<Integer> original) {
+        return GTCEuSteamTweakerConfig.singleblockMachineEfficiency.minermBPt;
     }
 }

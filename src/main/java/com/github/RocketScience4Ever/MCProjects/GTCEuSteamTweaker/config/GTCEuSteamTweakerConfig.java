@@ -82,7 +82,6 @@ public class GTCEuSteamTweakerConfig {
 
         @Config.Name("2: Steam Miner mB/t")
         @Config.Comment("The amount of GTCEu steam that the STEAM MINER should consume in mB/t [DEFAULT = 16]")
-        @Config.RequiresWorldRestart
         public int minermBPt = 16;
 
         @Config.Name("machine_EU_per_mB_ratios")
