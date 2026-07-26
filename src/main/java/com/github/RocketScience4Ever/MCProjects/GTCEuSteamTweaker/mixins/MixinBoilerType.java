@@ -9,10 +9,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.config.GTCEuSteamTweakerConfig;
 
+/**Mixin to {@link BoilerType} to tweak the base steam output of GTCEu multiblock boilers.
+ */
 @Mixin(BoilerType.class)
 public abstract class MixinBoilerType {
-    /**Overrides the base steam output of the GTCEu multiblock boilers with the values from the config of GTCEU Steam Tweaker.
-     * This injection will do nothing if {@code tweakMultiblockBoilerSteam} is set to {@code false} in the mod's config file.
+    /**Short circuits {@link BoilerType#steamPerTick()} to tweak the base steam output of the GTCEu multiblock boilers using the values from the config of GTCEU Steam Tweaker.
+     * <p>This injection will do nothing if {@code tweakMultiblockBoilerSteam} is set to {@code false} in the mod's config file.</p>
      * @param cir (CallbackInfoReturnable&lt;Integer&gt;) Allows this method to short circuit the steamPerTick in the {@link BoilerType} enum and hijack the return value with our own logic
      */
     @Inject(method = "steamPerTick", at = @At("HEAD"), cancellable = true)
