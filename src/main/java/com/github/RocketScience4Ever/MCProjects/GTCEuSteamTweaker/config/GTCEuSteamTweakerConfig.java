@@ -89,57 +89,65 @@ public class GTCEuSteamTweakerConfig {
 
         public static class SingleblockEUPerMbConfig {
             @Config.Name("A: Default Single Block Steam Machine EU/mB")
-            @Config.Comment("The amount of EU each mB of GTCEu steam is worth in a steam machine [DEFAULT = 1.0]" +
-                    "\nThe mB/t of steam that a steam machine recipe will consume is equal to the EU/t of the recipe in JEI divided by this value.")
+            @Config.Comment("""
+                    The amount of EU each mB of GTCEu steam is worth in a steam machine [DEFAULT = 1.0]\
+                    The mB/t of steam that a steam machine recipe will consume is equal to the EU/t of the recipe in JEI divided by this value.""")
             public double singleblockMachineEUPmBMaster = 1.0;
 
             @Config.Name("B: Steam Alloy Smelter EU/mB")
-            @Config.Comment("The amount of EU each mB of GTCEu steam is worth in a STEAM ALLOY SMELTER [DEFAULT = -1.0]" +
-                    "\nThe mB/t of steam that a STEAM ALLOY SMELTER recipe will consume is equal to the EU/t of the recipe in JEI divided by this value." +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the STEAM ALLOY SMELTER ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.")
+            @Config.Comment("""
+                    The amount of EU each mB of GTCEu steam is worth in a STEAM ALLOY SMELTER [DEFAULT = -1.0]\
+                    The mB/t of steam that a STEAM ALLOY SMELTER recipe will consume is equal to the EU/t of the recipe in JEI divided by this value.\
+                    If this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the STEAM ALLOY SMELTER ONLY.\
+                    If this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.""")
             public double alloySmelterEUPmB = -1.0;
 
             @Config.Name("C: Steam Compressor EU/mB")
-            @Config.Comment("The amount of EU each mB of GTCEu steam is worth in a STEAM COMPRESSOR [DEFAULT = -1.0]" +
-                    "\nThe mB/t of steam that a STEAM COMPRESSOR recipe will consume is equal to the EU/t of the recipe in JEI divided by this value." +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the STEAM COMPRESSOR ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.")
+            @Config.Comment("""
+                    The amount of EU each mB of GTCEu steam is worth in a STEAM COMPRESSOR [DEFAULT = -1.0]\
+                    The mB/t of steam that a STEAM COMPRESSOR recipe will consume is equal to the EU/t of the recipe in JEI divided by this value.\
+                    If this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the STEAM COMPRESSOR ONLY.\
+                    If this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.""")
             public double compressorEUPmB = -1.0;
 
             @Config.Name("D: Steam Extractor EU/mB")
-            @Config.Comment("The amount of EU each mB of GTCEu steam is worth in a STEAM EXTRACTOR [DEFAULT = -1.0]" +
-                    "\nThe mB/t of steam that a STEAM EXTRACTOR recipe will consume is equal to the EU/t of the recipe in JEI divided by this value." +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the STEAM EXTRACTOR ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.")
+            @Config.Comment("""
+                    The amount of EU each mB of GTCEu steam is worth in a STEAM EXTRACTOR [DEFAULT = -1.0]\
+                    The mB/t of steam that a STEAM EXTRACTOR recipe will consume is equal to the EU/t of the recipe in JEI divided by this value.\
+                    If this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the STEAM EXTRACTOR ONLY.\
+                    If this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.""")
             public double extractorEUPmB = -1.0;
 
             @Config.Name("E: Steam Furnace EU/mB")
-            @Config.Comment("The amount of EU each mB of GTCEu steam is worth in a SINGLE BLOCK STEAM FURNACE [DEFAULT = -1.0]" +
-                    "\nThe mB/t of steam that a SINGLE BLOCK STEAM FURNACE recipe will consume is equal to the EU/t of the recipe in JEI divided by this value." +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the SINGLE BLOCK STEAM FURNACE ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.")
+            @Config.Comment("""
+                    The amount of EU each mB of GTCEu steam is worth in a SINGLE BLOCK STEAM FURNACE [DEFAULT = -1.0]\
+                    The mB/t of steam that a SINGLE BLOCK STEAM FURNACE recipe will consume is equal to the EU/t of the recipe in JEI divided by this value.\
+                    If this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the SINGLE BLOCK STEAM FURNACE ONLY.\
+                    If this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.""")
             public double furnaceEUPmB = -1.0;
 
             @Config.Name("F: Steam Forge Hammer EU/mB")
-            @Config.Comment("The amount of EU each mB of GTCEu steam is worth in a STEAM FORGE HAMMER [DEFAULT = -1.0]" +
-                    "\nThe mB/t of steam that a STEAM FORGE HAMMER recipe will consume is equal to the EU/t of the recipe in JEI divided by this value." +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the STEAM FORGE HAMMER ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.")
+            @Config.Comment("""
+                    The amount of EU each mB of GTCEu steam is worth in a STEAM FORGE HAMMER [DEFAULT = -1.0]\
+                    The mB/t of steam that a STEAM FORGE HAMMER recipe will consume is equal to the EU/t of the recipe in JEI divided by this value.\
+                    If this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the STEAM FORGE HAMMER ONLY.\
+                    If this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.""")
             public double forgeHammerEUPmB = -1.0;
 
             @Config.Name("G: Steam Macerator EU/mB")
-            @Config.Comment("The amount of EU each mB of GTCEu steam is worth in a SINGLE BLOCK STEAM MACERATOR [DEFAULT = -1.0]" +
-                    "\nThe mB/t of steam that a SINGLE BLOCK STEAM MACERATOR recipe will consume is equal to the EU/t of the recipe in JEI divided by this value." +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the SINGLE BLOCK STEAM MACERATOR ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.")
+            @Config.Comment("""
+                    The amount of EU each mB of GTCEu steam is worth in a SINGLE BLOCK STEAM MACERATOR [DEFAULT = -1.0]\
+                    The mB/t of steam that a SINGLE BLOCK STEAM MACERATOR recipe will consume is equal to the EU/t of the recipe in JEI divided by this value.\
+                    If this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the SINGLE BLOCK STEAM MACERATOR ONLY.\
+                    If this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.""")
             public double maceratorEUPmB = -1.0;
 
             @Config.Name("H: Steam Rock Breaker EU/mB")
-            @Config.Comment("The amount of EU each mB of GTCEu steam is worth in a STEAM ROCK BREAKER [DEFAULT = -1.0]" +
-                    "\nThe mB/t of steam that a STEAM ROCK BREAKER recipe will consume is equal to the EU/t of the recipe in JEI divided by this value." +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the STEAM ROCK BREAKER ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.")
+            @Config.Comment("""
+                    The amount of EU each mB of GTCEu steam is worth in a STEAM ROCK BREAKER [DEFAULT = -1.0]\
+                    The mB/t of steam that a STEAM ROCK BREAKER recipe will consume is equal to the EU/t of the recipe in JEI divided by this value.\
+                    If this value is greater than or equal to 0, then this value will override the Default Single Block Steam Machine EU/mB for the STEAM ROCK BREAKER ONLY.\
+                    If this value is less than or equal to 0, then the Default Single Block Steam Machine EU/mB will be used.""")
             public double rockBreakerEUPmB = -1.0;
         }
 
@@ -152,45 +160,52 @@ public class GTCEuSteamTweakerConfig {
             public double lowPressureMachineRecipeDurationMultiplierMaster = 2.0;
 
             @Config.Name("B: Low Pressure Alloy Smelter Recipe Duration Multiplier")
-            @Config.Comment("The duration of a recipe (as listed in JEI) in the STEAM ALLOY SMELTER will be multiplied by this value when the recipe is performed in a low pressure steam alloy smelter [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the STEAM ALLOY SMELTER ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.")
+            @Config.Comment("""
+                    The duration of a recipe (as listed in JEI) in the STEAM ALLOY SMELTER will be multiplied by this value when the recipe is performed in a low pressure steam alloy smelter [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the STEAM ALLOY SMELTER ONLY.\
+                    If this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.""")
             public double lowPressureAlloySmelterRecipeDurationMultiplier = -1.0;
 
             @Config.Name("C: Low Pressure Compressor Recipe Duration Multiplier")
-            @Config.Comment("The duration of a recipe (as listed in JEI) in the STEAM COMPRESSOR will be multiplied by this value when the recipe is performed in a low pressure steam compressor [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the STEAM COMPRESSOR ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.")
+            @Config.Comment("""
+                    The duration of a recipe (as listed in JEI) in the STEAM COMPRESSOR will be multiplied by this value when the recipe is performed in a low pressure steam compressor [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the STEAM COMPRESSOR ONLY.\
+                    If this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.""")
             public double lowPressureCompressorRecipeDurationMultiplier = -1.0;
 
             @Config.Name("D: Low Pressure Extractor Recipe Duration Multiplier")
-            @Config.Comment("The duration of a recipe (as listed in JEI) in the STEAM EXTRACTOR will be multiplied by this value when the recipe is performed in a low pressure steam extractor [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the STEAM EXTRACTOR ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.")
+            @Config.Comment("""
+                    The duration of a recipe (as listed in JEI) in the STEAM EXTRACTOR will be multiplied by this value when the recipe is performed in a low pressure steam extractor [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the STEAM EXTRACTOR ONLY.\
+                    If this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.""")
             public double lowPressureExtractorRecipeDurationMultiplier = -1.0;
 
             @Config.Name("E: Low Pressure Furnace Recipe Duration Multiplier")
-            @Config.Comment("The duration of a recipe (as listed in JEI) in the SINGLE BLOCK STEAM FURNACE will be multiplied by this value when the recipe is performed in a low pressure steam furnace [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the SINGLE BLOCK STEAM FURNACE ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.")
+            @Config.Comment("""
+                    The duration of a recipe (as listed in JEI) in the SINGLE BLOCK STEAM FURNACE will be multiplied by this value when the recipe is performed in a low pressure steam furnace [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the SINGLE BLOCK STEAM FURNACE ONLY.\
+                    If this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.""")
             public double lowPressureFurnaceRecipeDurationMultiplier = -1.0;
 
             @Config.Name("F: Low Pressure Forge Hammer Recipe Duration Multiplier")
-            @Config.Comment("The duration of a recipe (as listed in JEI) in the STEAM FORGE HAMMER will be multiplied by this value when the recipe is performed in a low pressure steam forge hammer [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the STEAM FORGE HAMMER ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.")
+            @Config.Comment("""
+                    The duration of a recipe (as listed in JEI) in the STEAM FORGE HAMMER will be multiplied by this value when the recipe is performed in a low pressure steam forge hammer [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the STEAM FORGE HAMMER ONLY.\
+                    If this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.""")
             public double lowPressureForgeHammerRecipeDurationMultiplier = -1.0;
 
             @Config.Name("G: Low Pressure Macerator Recipe Duration Multiplier")
-            @Config.Comment("The duration of a recipe (as listed in JEI) in the SINGLE BLOCK STEAM MACERATOR will be multiplied by this value when the recipe is performed in a low pressure steam macerator [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the SINGLE BLOCK STEAM MACERATOR ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.")
+            @Config.Comment("""
+                    The duration of a recipe (as listed in JEI) in the SINGLE BLOCK STEAM MACERATOR will be multiplied by this value when the recipe is performed in a low pressure steam macerator [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the SINGLE BLOCK STEAM MACERATOR ONLY.\
+                    If this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.""")
             public double lowPressureMaceratorRecipeDurationMultiplier = -1.0;
 
             @Config.Name("H: Low Pressure Rock Breaker Recipe Duration Multiplier")
-            @Config.Comment("The duration of a recipe (as listed in JEI) in the STEAM ROCK BREAKER will be multiplied by this value when the recipe is performed in a low pressure steam rock breaker [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the STEAM ROCK BREAKER ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.")
+            @Config.Comment("""
+                    The duration of a recipe (as listed in JEI) in the STEAM ROCK BREAKER will be multiplied by this value when the recipe is performed in a low pressure steam rock breaker [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default Low Pressure Machine Recipe Duration Multiplier for the STEAM ROCK BREAKER ONLY.\
+                    If this value is less than or equal to 0, then the Default Low Pressure Machine Recipe Duration Multiplier will be used.""")
             public double lowPressureRockBreakerRecipeDurationMultiplier = -1.0;
         }
 
@@ -203,45 +218,52 @@ public class GTCEuSteamTweakerConfig {
             public double highPressureMachineRecipePowerMultiplierMaster = 2.0;
 
             @Config.Name("B: High Pressure Alloy Smelter Recipe Power Multiplier")
-            @Config.Comment("The mB/t of steam consumed by a recipe in the STEAM ALLOY SMELTER will be multiplied by this value when the recipe is performed in a high pressure steam alloy smelter [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the STEAM ALLOY SMELTER ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.")
+            @Config.Comment("""
+                    The mB/t of steam consumed by a recipe in the STEAM ALLOY SMELTER will be multiplied by this value when the recipe is performed in a high pressure steam alloy smelter [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the STEAM ALLOY SMELTER ONLY.\
+                    If this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.""")
             public double highPressureAlloySmelterRecipePowerMultiplier = -1.0;
 
             @Config.Name("C: High Pressure Compressor Recipe Power Multiplier")
-            @Config.Comment("The mB/t of steam consumed by a recipe in the STEAM COMPRESSOR will be multiplied by this value when the recipe is performed in a high pressure steam compressor [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the STEAM COMPRESSOR ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.")
+            @Config.Comment("""
+                    The mB/t of steam consumed by a recipe in the STEAM COMPRESSOR will be multiplied by this value when the recipe is performed in a high pressure steam compressor [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the STEAM COMPRESSOR ONLY.\
+                    If this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.""")
             public double highPressureCompressorRecipePowerMultiplier = -1.0;
 
             @Config.Name("D: High Pressure Extractor Recipe Power Multiplier")
-            @Config.Comment("The mB/t of steam consumed by a recipe in the STEAM EXTRACTOR will be multiplied by this value when the recipe is performed in a high pressure steam extractor [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the STEAM EXTRACTOR ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.")
+            @Config.Comment("""
+                    The mB/t of steam consumed by a recipe in the STEAM EXTRACTOR will be multiplied by this value when the recipe is performed in a high pressure steam extractor [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the STEAM EXTRACTOR ONLY.\
+                    If this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.""")
             public double highPressureExtractorRecipePowerMultiplier = -1.0;
 
             @Config.Name("E: High Pressure Furnace Recipe Power Multiplier")
-            @Config.Comment("The mB/t of steam consumed by a recipe in the SINGLE BLOCK STEAM FURNACE will be multiplied by this value when the recipe is performed in a high pressure steam furnace [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the SINGLE BLOCK STEAM FURNACE ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.")
+            @Config.Comment("""
+                    The mB/t of steam consumed by a recipe in the SINGLE BLOCK STEAM FURNACE will be multiplied by this value when the recipe is performed in a high pressure steam furnace [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the SINGLE BLOCK STEAM FURNACE ONLY.\
+                    If this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.""")
             public double highPressureFurnaceRecipePowerMultiplier = -1.0;
 
             @Config.Name("F: High Pressure Forge Hammer Recipe Power Multiplier")
-            @Config.Comment("The mB/t of steam consumed by a recipe in the STEAM FORGE HAMMER will be multiplied by this value when the recipe is performed in a high pressure steam forge hammer [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the STEAM FORGE HAMMER ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.")
+            @Config.Comment("""
+                    The mB/t of steam consumed by a recipe in the STEAM FORGE HAMMER will be multiplied by this value when the recipe is performed in a high pressure steam forge hammer [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the STEAM FORGE HAMMER ONLY.\
+                    If this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.""")
             public double highPressureForgeHammerRecipePowerMultiplier = -1.0;
 
             @Config.Name("G: High Pressure Macerator Recipe Power Multiplier")
-            @Config.Comment("The mB/t of steam consumed by a recipe in the SINGLE BLOCK STEAM MACERATOR will be multiplied by this value when the recipe is performed in a high pressure steam macerator [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the SINGLE BLOCK STEAM MACERATOR ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.")
+            @Config.Comment("""
+                    The mB/t of steam consumed by a recipe in the SINGLE BLOCK STEAM MACERATOR will be multiplied by this value when the recipe is performed in a high pressure steam macerator [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the SINGLE BLOCK STEAM MACERATOR ONLY.\
+                    If this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.""")
             public double highPressureMaceratorRecipePowerMultiplier = -1.0;
 
             @Config.Name("H: High Pressure Rock Breaker Recipe Power Multiplier")
-            @Config.Comment("The mB/t of steam consumed by a recipe in the STEAM ROCK BREAKER will be multiplied by this value when the recipe is performed in a high pressure steam rock breaker [DEFAULT = -1.0]" +
-                    "\nIf this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the STEAM ROCK BREAKER ONLY." +
-                    "\nIf this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.")
+            @Config.Comment("""
+                    The mB/t of steam consumed by a recipe in the STEAM ROCK BREAKER will be multiplied by this value when the recipe is performed in a high pressure steam rock breaker [DEFAULT = -1.0]\
+                    If this value is greater than or equal to 0, then this value will override the Default High Pressure Machine Recipe Power Multiplier for the STEAM ROCK BREAKER ONLY.\
+                    If this value is less than or equal to 0, then the Default High Pressure Machine Recipe Power Multiplier will be used.""")
             public double highPressureRockBreakerRecipePowerMultiplier = -1.0;
         }
     }

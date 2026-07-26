@@ -17,6 +17,7 @@
     "MixinSteamLavaBoiler",
     "MixinSteamMacerator",
     "MixinSteamMiner",
+    "MixinSteamRockBreaker",
     "MixinSteamSolarBoiler"
   ],
   "server": [],
