@@ -10,7 +10,6 @@ import gregtech.common.metatileentities.steam.SteamMiner;
 import net.minecraft.util.ResourceLocation;
 
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import org.spongepowered.asm.mixin.Final;
@@ -25,7 +24,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 /**Mixin to {@link SteamMiner} to apply the {@link ITweakeableSteamEfficiency} interface.
  */
 @Mixin(SteamMiner.class)
-//@Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public abstract class MixinSteamMiner extends MetaTileEntity {
     @Mutable
     @Final
