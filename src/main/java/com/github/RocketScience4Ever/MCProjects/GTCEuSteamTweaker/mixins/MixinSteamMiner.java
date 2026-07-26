@@ -25,7 +25,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 /**Mixin to {@link SteamMiner} to apply the {@link ITweakeableSteamEfficiency} interface.
  */
 @Mixin(SteamMiner.class)
-@Mod.EventBusSubscriber(modid = Tags.MOD_ID)
+//@Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public abstract class MixinSteamMiner extends MetaTileEntity {
     @Mutable
     @Final
