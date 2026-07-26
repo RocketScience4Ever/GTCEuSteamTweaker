@@ -1,17 +1,25 @@
 A small addon mod for GTCEu 1.12.2 to allow users to modify the steam production, steam consumption, and water consumption of GTCEu steam boilers and machines. This mod exists because GTCEu does not natively provide support to change most aspects of steam machines and boilers with its configs or via crafttweaker or groovyscript.
 
 **__Features:__**
-- Set the maximum steam output (mB/t) of any GTCEu single block steam boiler (high and low pressure)
-- Set the maximum steam output (mB/t) of any GTCEu multiblock steam boiler
-- **WIP:** Set the EU/mB of steam in GTCEu single block steam machines (multiblock machines can already do this using vanilla GTCEu config)
-- **WIP:** Set the ratio of water to steam for GTCEu single block and multiblock machines
+
+*   Independently set the maximum steam output (mB/t) of any single block steam boiler (high and low pressure)
+*   Independently set the maximum steam output (mB/t) of any multiblock steam boiler
+*   Independently (or collectively) set the EU/mB of steam in any GTCEu single block steam machine (multiblock machines can already do this using vanilla GTCEu config)
+*   Independently (or collectively) set multipliers for the recipe duration of recipes in any low pressure steam machine
+*   Independently (or collectively) set multipliers for the steam consumption of recipes in any high pressure steam machine
+*   **WIP:** Set the ratio of water to steam for GTCEu single block and multiblock machines
 
 All of the above features can be configured through this mod's config file (gtceusteamtweaker.cfg).
 
-You may use this mod in your modpacks.
+You may use this mod in your modpacks on any platform.
+
+**__Installation Methods (You only need to do one of these):__**
+- Go to https://www.curseforge.com/minecraft/mc-mods/gtceu-steam-tweaker and install the latest version of the mod into any applicable curseforge profile
+- Go to the releases in this github repository, download the mod jar, and copy it into the ``mods`` folder under the minecraft instance for which you want to install this mod
 
 **__Dependencies:__**
-- GTCEu 2.8.10-beta or later
-- MixinBooter 11.7 or later
 
-*This mod is **NOT** maintained by the GregariousT or the GTCEu team. Do not contact them about issues with this mod. If you encounter a bug, please report it as an issue to the GitHub repository for GTCEu Steam Tweaker.*
+*   GTCEu 2.8.10-beta or later
+*   MixinBooter 11.7 or later
+
+_This mod is **NOT** maintained by the GregariousT or the GTCEu team. Do not contact them about issues with this mod. If you encounter a bug, please report it as an issue to the GitHub repository for GTCEu Steam Tweaker._
