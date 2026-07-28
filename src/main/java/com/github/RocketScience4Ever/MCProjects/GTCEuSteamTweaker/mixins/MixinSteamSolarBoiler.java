@@ -1,6 +1,7 @@
 package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixins;
 
 import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.config.GTCEuSteamTweakerConfig;
+import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixin_interfaces.ITweakableSteamBoiler;
 
 import gregtech.common.metatileentities.steam.boiler.SteamBoiler;
 import gregtech.common.metatileentities.steam.boiler.SteamSolarBoiler;
@@ -13,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /**Mixin to {@link SteamSolarBoiler} to tweak the base steam output of the single block solar boilers.
  */
 @Mixin(SteamSolarBoiler.class)
-public abstract class MixinSteamSolarBoiler extends SteamBoiler {
+public abstract class MixinSteamSolarBoiler extends SteamBoiler implements ITweakableSteamBoiler {
     /**Do not call this; it only exists to make the compiler happy.
      */
     private MixinSteamSolarBoiler() {
@@ -26,8 +27,26 @@ public abstract class MixinSteamSolarBoiler extends SteamBoiler {
      */
     @Inject(method = "getBaseSteamOutput", at = @At("HEAD"), cancellable = true)
     private void onGetBaseSteamOutput(CallbackInfoReturnable<Integer> cir) {
-        if (GTCEuSteamTweakerConfig.singleblockBoilerOutputConfig.tweakSingleblockBoilerSteam) {
-            cir.setReturnValue((this.isHighPressure ? GTCEuSteamTweakerConfig.singleblockBoilerOutputConfig.highPressureSolarSteam : GTCEuSteamTweakerConfig.singleblockBoilerOutputConfig.lowPressureSolarSteam) * 20);
+        if (GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleBlockBoilerSteamConfig.tweakSingleblockBoilerSteam) {
+            cir.setReturnValue((this.isHighPressure ? GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleBlockBoilerSteamConfig.highPressureSolarSteam : GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleBlockBoilerSteamConfig.lowPressureSolarSteam) * 20);
+        }
+    }
+
+    @Override
+    public int gTCEuSteamTweaker$getConstantWaterConsumptionRate() {
+        if (this.isHighPressure) {
+            return GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.highPressureSolarConstantWaterRate > 0 ? GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.highPressureSolarConstantWaterRate : GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.singleblockConstantWaterRateMaster;
+        } else {
+            return GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.lowPressureSolarConstantWaterRate > 0 ? GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.lowPressureSolarConstantWaterRate : GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.singleblockConstantWaterRateMaster;
+        }
+    }
+
+    @Override
+    public double gTCEuSteamTweaker$getSteamPWaterRatio() {
+        if (this.isHighPressure) {
+            return GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.highPressureSolarSteamPWaterRatio > 0.005 ? GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.highPressureSolarSteamPWaterRatio : GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.singleblockSteamPWaterRatioMaster;
+        } else {
+            return GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.lowPressureSolarSteamPWaterRatio > 0.005 ? GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.lowPressureSolarSteamPWaterRatio : GTCEuSteamTweakerConfig.singleblockBoilerConfig.singleblockBoilerWaterConfig.singleblockSteamPWaterRatioMaster;
         }
     }
 }

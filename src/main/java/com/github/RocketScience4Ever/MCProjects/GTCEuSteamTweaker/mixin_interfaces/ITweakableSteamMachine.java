@@ -1,8 +1,9 @@
 package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixin_interfaces;
 
 /**Interface to house the methods that allow steam efficiency tweaks to be individual to each machine if desired.
+ * <p>Used to apply duck typing to single block steam machines.</p>
  */
-public interface ITweakeableSteamEfficiency {
+public interface ITweakableSteamMachine {
     /**Returns the EU/mB of GTCEu steam for the machine implementing this interface.
      * @return (double) The amount of EU that each mB of GTCEu steam should be worth in this machine
      */

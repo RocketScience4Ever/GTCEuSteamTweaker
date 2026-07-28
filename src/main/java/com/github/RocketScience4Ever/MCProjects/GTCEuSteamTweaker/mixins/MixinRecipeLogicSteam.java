@@ -1,7 +1,7 @@
 package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixins;
 
 import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.config.GTCEuSteamTweakerConfig;
-import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixin_interfaces.ITweakeableSteamEfficiency;
+import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixin_interfaces.ITweakableSteamMachine;
 
 import gregtech.api.capability.impl.AbstractRecipeLogic;
 import gregtech.api.capability.impl.RecipeLogicSteam;
@@ -27,7 +27,7 @@ import javax.annotation.Nonnull;
 @Mixin(RecipeLogicSteam.class)
 public abstract class MixinRecipeLogicSteam extends AbstractRecipeLogic {
     @Unique
-    private ITweakeableSteamEfficiency gTCEuSteamTweaker$tweakableSteamEfficiencyMTE; //Variable for duck typing
+    private ITweakableSteamMachine gTCEuSteamTweaker$tweakableSteamEfficiencyMTE; //Variable for duck typing
 
     @Shadow
     @Final
@@ -43,13 +43,13 @@ public abstract class MixinRecipeLogicSteam extends AbstractRecipeLogic {
         super(tileEntity, recipeMap);
     }
 
-    /**Method to duck type the {@link MetaTileEntity} in the {@link RecipeLogicSteam} if it implements {@link ITweakeableSteamEfficiency}.
+    /**Method to duck type the {@link MetaTileEntity} in the {@link RecipeLogicSteam} if it implements {@link ITweakableSteamMachine}.
      * This duck typing is applied during the {@code RecipeLogicSteam} constructor to prevent having to re-cast the {@code MetaTileEntity} every time it is used to access a method from {@code ITweakeableSteamEfficiency}.
      * @param ci (CallbackInfo) Unused, because this is not a cancellable injector
      */
     @Inject(method = "<init>", at = @At("RETURN"))
     private void onInit(CallbackInfo ci) {
-        gTCEuSteamTweaker$tweakableSteamEfficiencyMTE = this.metaTileEntity instanceof ITweakeableSteamEfficiency ? (ITweakeableSteamEfficiency)this.metaTileEntity : null;
+        gTCEuSteamTweaker$tweakableSteamEfficiencyMTE = this.metaTileEntity instanceof ITweakableSteamMachine ? (ITweakableSteamMachine)this.metaTileEntity : null;
     }
 
     /**Short circuits {@code RecipeLogicSteam#getEnergyStored()} to reflect changes to the EU/mB ratio made by GTCEu Steam Tweaker.
@@ -58,7 +58,7 @@ public abstract class MixinRecipeLogicSteam extends AbstractRecipeLogic {
      */
     @Inject(method = "getEnergyStored", at = @At("HEAD"), cancellable = true)
     private void onGetEnergyStored(CallbackInfoReturnable<Long> cir) {
-        if (GTCEuSteamTweakerConfig.singleblockMachineEfficiency.tweakSingleblockMachineEfficiency && gTCEuSteamTweaker$tweakableSteamEfficiencyMTE != null) {
+        if (GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.tweakSingleblockMachineEfficiency && gTCEuSteamTweaker$tweakableSteamEfficiencyMTE != null) {
             cir.setReturnValue((long)Math.ceil((double)this.steamFluidTank.getFluidAmount() * this.gTCEuSteamTweaker$tweakableSteamEfficiencyMTE.gTCEuSteamTweaker$getEUPermB()));
         }
     }
@@ -69,7 +69,7 @@ public abstract class MixinRecipeLogicSteam extends AbstractRecipeLogic {
      */
     @Inject(method = "getEnergyCapacity", at = @At("HEAD"), cancellable = true)
     private void onGetEnergyCapacity(CallbackInfoReturnable<Long> cir) {
-        if (GTCEuSteamTweakerConfig.singleblockMachineEfficiency.tweakSingleblockMachineEfficiency && gTCEuSteamTweaker$tweakableSteamEfficiencyMTE != null) {
+        if (GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.tweakSingleblockMachineEfficiency && gTCEuSteamTweaker$tweakableSteamEfficiencyMTE != null) {
             cir.setReturnValue((long)Math.floor((double)this.steamFluidTank.getCapacity() * this.gTCEuSteamTweaker$tweakableSteamEfficiencyMTE.gTCEuSteamTweaker$getEUPermB()));
         }
     }
@@ -82,7 +82,7 @@ public abstract class MixinRecipeLogicSteam extends AbstractRecipeLogic {
      */
     @Inject(method = "calculateOverclock", at = @At("HEAD"), cancellable = true)
     private void onCalculateOverclock(@Nonnull Recipe recipe, CallbackInfoReturnable<int[]> cir) {
-        if (GTCEuSteamTweakerConfig.singleblockMachineEfficiency.tweakSingleblockMachineEfficiency && gTCEuSteamTweaker$tweakableSteamEfficiencyMTE != null) {
+        if (GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.tweakSingleblockMachineEfficiency && gTCEuSteamTweaker$tweakableSteamEfficiencyMTE != null) {
             int[] result = new int[2];
             double baseEUt = (recipe.getEUt() / this.gTCEuSteamTweaker$tweakableSteamEfficiencyMTE.gTCEuSteamTweaker$getEUPermB()); //Tweak EU/mB ratio
 

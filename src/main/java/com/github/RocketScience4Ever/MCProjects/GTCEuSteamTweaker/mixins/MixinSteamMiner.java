@@ -1,7 +1,7 @@
 package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixins;
 
 import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.config.GTCEuSteamTweakerConfig;
-import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixin_interfaces.ITweakeableSteamEfficiency;
+import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixin_interfaces.ITweakableSteamMachine;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
-/**Mixin to {@link SteamMiner} to apply the {@link ITweakeableSteamEfficiency} interface.
+/**Mixin to {@link SteamMiner} to apply the {@link ITweakableSteamMachine} interface.
  */
 @Mixin(SteamMiner.class)
 public abstract class MixinSteamMiner extends MetaTileEntity {
@@ -28,13 +28,13 @@ public abstract class MixinSteamMiner extends MetaTileEntity {
      */
     @WrapOperation(method = "drainEnergy", at = @At(value = "FIELD", target = "Lgregtech/common/metatileentities/steam/SteamMiner;energyPerTick:I"))
     private int onDrainEnergyGetEnergyPerTick(SteamMiner miner, Operation<Integer> original) {
-        return GTCEuSteamTweakerConfig.singleblockMachineEfficiency.minermBPt;
+        return GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.minermBPt;
     }
 
     /**Updates the tooltip for the {@link SteamMiner} to reflect changes made by {@link MixinSteamMiner#onDrainEnergyGetEnergyPerTick(SteamMiner, Operation)}.
      */
     @WrapOperation(method = "addInformation", at = @At(value = "FIELD", target = "Lgregtech/common/metatileentities/steam/SteamMiner;energyPerTick:I"))
     private int onAddInformationGetEnergyPerTick(SteamMiner miner, Operation<Integer> original) {
-        return GTCEuSteamTweakerConfig.singleblockMachineEfficiency.minermBPt;
+        return GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.minermBPt;
     }
 }

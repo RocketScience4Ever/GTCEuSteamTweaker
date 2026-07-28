@@ -19,12 +19,12 @@ public abstract class MixinBoilerType {
      */
     @Inject(method = "steamPerTick", at = @At("HEAD"), cancellable = true)
     private void onSteamPerTick(CallbackInfoReturnable<Integer> cir) {
-        if (GTCEuSteamTweakerConfig.multiblockBoilerOutputConfig.tweakMultiblockBoilerSteam) {
+        if (GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerSteamConfig.tweakMultiblockBoilerSteam) {
             switch ((BoilerType)(Object)this) {
-                case BRONZE -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerOutputConfig.bronzeMultiBoilerSteam);
-                case STEEL -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerOutputConfig.steelMultiBoilerSteam);
-                case TITANIUM -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerOutputConfig.titaniumMultiBoilerSteam);
-                case TUNGSTENSTEEL -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerOutputConfig.tungstensteelMultiBoilerSteam);
+                case BRONZE -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerSteamConfig.bronzeMultiBoilerSteam);
+                case STEEL -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerSteamConfig.steelMultiBoilerSteam);
+                case TITANIUM -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerSteamConfig.titaniumMultiBoilerSteam);
+                case TUNGSTENSTEEL -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerSteamConfig.tungstensteelMultiBoilerSteam);
                 default -> cir.setReturnValue(0);
             }
         }
