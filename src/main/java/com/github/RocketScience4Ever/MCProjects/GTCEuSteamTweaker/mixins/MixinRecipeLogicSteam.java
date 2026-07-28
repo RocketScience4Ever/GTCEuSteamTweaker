@@ -86,8 +86,8 @@ public abstract class MixinRecipeLogicSteam extends AbstractRecipeLogic {
             int[] result = new int[2];
             double baseEUt = (recipe.getEUt() / this.gTCEuSteamTweaker$tweakableSteamEfficiencyMTE.gTCEuSteamTweaker$getEUPermB()); //Tweak EU/mB ratio
 
-            result[0] = (int)(this.isHighPressure ? baseEUt * this.gTCEuSteamTweaker$tweakableSteamEfficiencyMTE.gTCEuSteamTweaker$getHighPressurePowerMultiplier() : baseEUt); //Tweak high pressure power multiplier
-            result[1] = (int)(this.isHighPressure ? recipe.getDuration() : recipe.getDuration() * this.gTCEuSteamTweaker$tweakableSteamEfficiencyMTE.gTCEuSteamTweaker$getLowPressureDurationMultiplier()); //Tweak low pressure duration multiplier
+            result[0] = (int)Math.max(1.0,this.isHighPressure ? baseEUt * this.gTCEuSteamTweaker$tweakableSteamEfficiencyMTE.gTCEuSteamTweaker$getHighPressurePowerMultiplier() : baseEUt); //Tweak high pressure power multiplier
+            result[1] = (int)Math.max(1.0,this.isHighPressure ? recipe.getDuration() : recipe.getDuration() * this.gTCEuSteamTweaker$tweakableSteamEfficiencyMTE.gTCEuSteamTweaker$getLowPressureDurationMultiplier()); //Tweak low pressure duration multiplier
             cir.setReturnValue(result); //Short circuit the target method with the result from the GTCEu Steam Tweaker logic
         }
     }
