@@ -4,11 +4,6 @@ package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixin_interfa
  * <p>Used to apply duck typing to multiblock steam boilers.</p>
  */
 public interface ITweakableMultiblockBoiler {
-    /**Returns the constant amount of water (in mB) that this type of multiblock steam boiler should consume for each steam generation cycle if the {@code multiblockWaterLogicType == 1}.
-     * @return (int) The constant water consumption rate which should be used for this type of multiblock boiler
-     */
-    int gTCEuSteamTweaker$getMultiblockBoilerConstantWaterRate();
-
     /**Returns the amount of steam (in mB) that this type of multiblock steam boiler should produce for each mB of water consumed by a steam generation cycle if the {@code multiblockWaterLogicType == 2}.
      * @return (double) The steam per water ratio which should be used for this type of multiblock boiler
      */

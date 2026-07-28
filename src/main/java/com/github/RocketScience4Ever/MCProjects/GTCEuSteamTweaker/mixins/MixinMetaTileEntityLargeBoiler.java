@@ -27,16 +27,6 @@ public abstract class MixinMetaTileEntityLargeBoiler extends MultiblockWithDispl
     }
 
     @Unique
-    public int gTCEuSteamTweaker$getMultiblockBoilerConstantWaterRate() {
-        return switch (this.boilerType) {
-            case BRONZE -> GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.bronzeMultiblockConstantWaterRate > 0 ? GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.bronzeMultiblockConstantWaterRate : GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.multiblockConstantWaterRateMaster;
-            case STEEL -> GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.steelMultiblockConstantWaterRate > 0 ? GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.steelMultiblockConstantWaterRate : GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.multiblockConstantWaterRateMaster;
-            case TITANIUM -> GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.titaniumMultiblockConstantWaterRate > 0 ? GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.titaniumMultiblockConstantWaterRate : GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.multiblockConstantWaterRateMaster;
-            case TUNGSTENSTEEL -> GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.tungstensteelMultiblockConstantWaterRate > 0 ? GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.tungstensteelMultiblockConstantWaterRate : GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.multiblockConstantWaterRateMaster;
-        };
-    }
-
-    @Unique
     public double gTCEuSteamTweaker$getMultiblockBoilerSteamPWaterRatio() {
         return switch (this.boilerType) {
             case BRONZE -> GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.bronzeMultiblockSteamPWaterRatio > 0.005 ? GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.bronzeMultiblockSteamPWaterRatio : GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerWaterConfig.multiblockSteamPWaterRatioMaster;
