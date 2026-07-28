@@ -1,7 +1,7 @@
 package com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixins;
 
 import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.config.GTCEuSteamTweakerConfig;
-import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixin_interfaces.ITweakeableSteamEfficiency;
+import com.github.RocketScience4Ever.MCProjects.GTCEuSteamTweaker.mixin_interfaces.ITweakableSteamMachine;
 
 import gregtech.api.metatileentity.SteamMetaTileEntity;
 import gregtech.api.recipes.RecipeMap;
@@ -12,10 +12,10 @@ import net.minecraft.util.ResourceLocation;
 
 import org.spongepowered.asm.mixin.Mixin;
 
-/**Mixin to {@link SteamCompressor} to apply the {@link ITweakeableSteamEfficiency} interface.
+/**Mixin to {@link SteamCompressor} to apply the {@link ITweakableSteamMachine} interface.
  */
 @Mixin(SteamCompressor.class)
-public abstract class MixinSteamCompressor extends SteamMetaTileEntity implements ITweakeableSteamEfficiency {
+public abstract class MixinSteamCompressor extends SteamMetaTileEntity implements ITweakableSteamMachine {
     /**Do not call this; it only exists to make the compiler happy.
      */
     private MixinSteamCompressor(ResourceLocation metaTileEntityId, RecipeMap<?> recipeMap, ICubeRenderer renderer, boolean isHighPressure) {
@@ -24,16 +24,16 @@ public abstract class MixinSteamCompressor extends SteamMetaTileEntity implement
 
     @Override
     public double gTCEuSteamTweaker$getEUPermB() {
-        return GTCEuSteamTweakerConfig.singleblockMachineEfficiency.singleblockEUPmBConfig.compressorEUPmB > 0 ? GTCEuSteamTweakerConfig.singleblockMachineEfficiency.singleblockEUPmBConfig.compressorEUPmB : GTCEuSteamTweakerConfig.singleblockMachineEfficiency.singleblockEUPmBConfig.singleblockMachineEUPmBMaster;
+        return GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.compressorEUPmB > 0 ? GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.compressorEUPmB : GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.singleblockMachineEUPmBMaster;
     }
 
     @Override
     public double gTCEuSteamTweaker$getLowPressureDurationMultiplier() {
-        return GTCEuSteamTweakerConfig.singleblockMachineEfficiency.singleblockLowPressureDurationMultiplierConfig.lowPressureCompressorRecipeDurationMultiplier > 0 ? GTCEuSteamTweakerConfig.singleblockMachineEfficiency.singleblockLowPressureDurationMultiplierConfig.lowPressureCompressorRecipeDurationMultiplier : GTCEuSteamTweakerConfig.singleblockMachineEfficiency.singleblockLowPressureDurationMultiplierConfig.lowPressureMachineRecipeDurationMultiplierMaster;
+        return GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.lowPressureCompressorRecipeDurationMultiplier > 0 ? GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.lowPressureCompressorRecipeDurationMultiplier : GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.lowPressureMachineRecipeDurationMultiplierMaster;
     }
 
     @Override
     public double gTCEuSteamTweaker$getHighPressurePowerMultiplier() {
-        return GTCEuSteamTweakerConfig.singleblockMachineEfficiency.singleblockHighPressurePowerMultiplierConfig.highPressureCompressorRecipePowerMultiplier > 0 ? GTCEuSteamTweakerConfig.singleblockMachineEfficiency.singleblockHighPressurePowerMultiplierConfig.highPressureCompressorRecipePowerMultiplier : GTCEuSteamTweakerConfig.singleblockMachineEfficiency.singleblockHighPressurePowerMultiplierConfig.highPressureMachineRecipePowerMultiplierMaster;
+        return GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.highPressureCompressorRecipePowerMultiplier > 0 ? GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.highPressureCompressorRecipePowerMultiplier : GTCEuSteamTweakerConfig.singleblockMachineEfficiencyConfig.highPressureMachineRecipePowerMultiplierMaster;
     }
 }

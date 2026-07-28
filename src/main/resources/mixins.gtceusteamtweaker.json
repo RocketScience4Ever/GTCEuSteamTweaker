@@ -9,6 +9,7 @@
     "MixinBoilerType",
     "MixinRecipeLogicSteam",
     "MixinSteamAlloySmelter",
+    "MixinSteamBoiler",
     "MixinSteamCoalBoiler",
     "MixinSteamCompressor",
     "MixinSteamExtractor",
