@@ -7,7 +7,7 @@ A small addon mod for GTCEu 1.12.2 to allow users to modify the steam production
 *   Independently (or collectively) set the EU/mB of steam in any GTCEu single block steam machine (multiblock machines can already do this using vanilla GTCEu config)
 *   Independently (or collectively) set multipliers for the recipe duration of recipes in any low pressure steam machine
 *   Independently (or collectively) set multipliers for the steam consumption of recipes in any high pressure steam machine
-*   **WIP:** Set the ratio of water to steam for GTCEu single block and multiblock machines
+*   Independently (or collectively) set the water consumption for single block boilers (can be constant, or variable based on the amount of steam being generated)
 
 All of the above features can be configured through this mod's config file (gtceusteamtweaker.cfg).
 
