@@ -15,7 +15,8 @@ You may use this mod in your modpacks on any platform.
 
 **__Installation Methods (You only need to do one of these):__**
 - Go to https://www.curseforge.com/minecraft/mc-mods/gtceu-steam-tweaker and install the latest version of the mod into any applicable curseforge profile
-- Go to the releases in this github repository, download the mod jar, and copy it into the ``mods`` folder under the minecraft instance for which you want to install this mod
+- Go to the releases in this github repository, download gtceusteamtweaker-[minecraftVersion]-v[modVersion].jar, and copy it into the ``mods`` folder under the minecraft instance for which you want to install this mod
+- Regardless of which installation method you use you DO NOT want the ``-dev`` or ``-sources`` jar files unless you are a mod developer working in a deobfuscated development environment. If you do not know what that means, don't download the ``-dev`` or ``-sources`` jar files
 
 **__Dependencies:__**
 
