@@ -11,11 +11,14 @@ A small addon mod for GTCEu 1.12.2 to allow users to modify the steam production
 
 All of the above features can be configured through this mod's config file (gtceusteamtweaker.cfg).
 
-You may use this mod in your modpacks on any platform.
+You MAY use this mod in your modpacks on any platform.
+
+You MAY NOT re-host any of the files for this mod outside of a modpack.
 
 **__Installation Methods (You only need to do one of these):__**
 - Go to https://www.curseforge.com/minecraft/mc-mods/gtceu-steam-tweaker and install the latest version of the mod into any applicable curseforge profile
 - Go to the releases in this github repository, download gtceusteamtweaker-[minecraftVersion]-v[modVersion].jar, and copy it into the ``mods`` folder under the minecraft instance for which you want to install this mod
+- Note that CurseForge will only let you publish a modpack if you download the files for all of its mods through CurseForge
 - Regardless of which installation method you use you DO NOT want the ``-dev`` or ``-sources`` jar files unless you are a mod developer working in a deobfuscated development environment. If you do not know what that means, don't download the ``-dev`` or ``-sources`` jar files
 
 **__Dependencies:__**
