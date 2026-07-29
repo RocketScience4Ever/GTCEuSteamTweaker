@@ -25,7 +25,6 @@ public abstract class MixinBoilerType {
                 case STEEL -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerSteamConfig.steelMultiBoilerSteam);
                 case TITANIUM -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerSteamConfig.titaniumMultiBoilerSteam);
                 case TUNGSTENSTEEL -> cir.setReturnValue(GTCEuSteamTweakerConfig.multiblockBoilerConfig.multiblockBoilerSteamConfig.tungstensteelMultiBoilerSteam);
-                default -> cir.setReturnValue(0);
             }
         }
     }
