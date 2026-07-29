@@ -247,7 +247,6 @@ public class GTCEuSteamTweakerConfig {
         }
 
         @Config.Name("multi_block_boiler_water")
-        @Config.Comment("Not Yet Implemented")
         public MultiblockBoilerWaterConfig multiblockBoilerWaterConfig = new MultiblockBoilerWaterConfig();
 
         public static class MultiblockBoilerWaterConfig {
